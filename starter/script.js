@@ -83,3 +83,19 @@ const displayMovements = function (movements) {
 };
 
 displayMovements(account1.movements);
+
+// how to add the 'username' in each obj:
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+
+// const user = 'Steven Thomas Williams'; // we want something like this: stw
+
+createUsernames(accounts);
+console.log(accounts);
